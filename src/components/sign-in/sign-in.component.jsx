@@ -40,7 +40,6 @@ handleChange = event =>{
           name='email'
           type='email' 
           handleChange={this.handleChange}
-          placeholder='Email'
           value={this.state.email} 
           label='email'
           required
@@ -49,7 +48,6 @@ handleChange = event =>{
           name='password' 
           type= 'password'
           value={this.state.password} 
-          placeholder='password'
           handleChange={this.handleChange}
           label='password'
           required
