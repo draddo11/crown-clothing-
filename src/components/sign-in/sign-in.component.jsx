@@ -3,6 +3,7 @@ import React from 'react';
 import FormInput from '../form-inputs/form-input.component';
 import CustomButton from '../custom-buttons/custom-button.component';
 import {signInWithGoogle} from '../../firebase/firebase.utils'
+
 import  './sign-in.styles.scss';
 
 
@@ -15,7 +16,7 @@ class SignIn extends  React.Component{
           password:''
       }
   } 
-  handleSubmit=event=>{
+  handleSubmit= event =>{
     event.preventDefault();
 
     this.setState({email:'',password:''})
