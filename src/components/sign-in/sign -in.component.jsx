@@ -53,10 +53,12 @@ handleChange = event =>{
           label='password'
           required
           />
-          <CustomButton type='submit' value='submit form'> SIGN IN</CustomButton> 
-          <CustomButton onClick={signInWithGoogle}> {''}
-          sign in with Google{' '}
-          </CustomButton> 
+          <div className='buttons'>
+            <CustomButton type='submit' value='submit form'> SIGN IN</CustomButton> 
+            <CustomButton onClick={signInWithGoogle} isGoogleSignIn> {''}
+            sign in with Google{' '}
+            </CustomButton> 
+          </div>
           </form>
           </div>
       )
