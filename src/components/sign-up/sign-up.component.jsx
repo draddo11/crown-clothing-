@@ -18,6 +18,41 @@ class SignUp extends Component{
             confirmPassword:''
         }
     }
+
+    handleSubmit= async event =>{
+        event.preventDefault();
+
+        const{displayName,email, password , confirmPassword} = this.state;
+        
+        if(password !== confirmpassword){
+            alert('passwords dont match');
+            return;
+        }
+       
+        try{
+            const {user} = await auth.createUserWithEmailAndPassword(
+                email,
+                password
+                );
+
+           await  createUserProfileDocument(user , {displayName});
+                this.setState({
+                        displayName: '',
+                        email:'',
+                        password:'',
+                        confirmPassword:''
+                    
+                })
+              }catch(error){
+        console.log('error');
+        }
+    };
+
+    handleChange=(event)=>{
+        const {name , value}= event.target;
+        this.setState({[name]: value});
+    }
+
     render(){
         const{displayName,email, password , confirmPassword} = this.state;
         return(
@@ -57,9 +92,11 @@ class SignUp extends Component{
                 label='Confirm Password'
                 required
                 /> 
+                <CustomButton type='submit'>SIGN UP</CustomButton>
             </form>
             </div>
         )
     }
 }
 
+export default SignUp;
