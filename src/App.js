@@ -1,11 +1,15 @@
 import React from 'react';
 import {Switch,Route} from 'react-router-dom';
+import {connect}  from 'react-redux';
+
 import './App.css';
 import HomePage  from './pages/homepage/homepage.component';
 import ShopPage from './pages/shop/shop.component';
 import Header from './components/header/header.component';
 import SignInAndSignUpPage from './pages/sign-in-sign-up/sign-in-sign-up.component'
 import {auth , createUserProfileDocument} from './firebase/firebase.utils';
+import {} from './redux/user/user.actions'
+
 
 class App extends React.Component {
   constructor(){
@@ -60,4 +64,9 @@ class App extends React.Component {
   
 }
 
-export default App;
+
+const mapDispatchToProps = dispatch => ({
+  setCurrentUser: user => dispatch()
+})
+
+export default  connect (null, ) (App);
