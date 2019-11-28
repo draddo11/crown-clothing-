@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "eslint-utils": "^1.4.3",
     "firebase": "^7.2.1",
     "firebase-app": "^0.0.1",
     "firebase-auth": "^0.1.2",
