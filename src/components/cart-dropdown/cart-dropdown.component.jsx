@@ -24,8 +24,8 @@ const CartDropdown = ({cartItems}) => (
 );
    
 
-const mapStateToProps = ({cart:{CartItems}}) => ({
+const mapStateToProps = ({cart:{cartItems}}) => ({
 cartItems
 });
 
-export default connect (maopStateToProps)(CartDropdown);
+export default connect (mapStateToProps)(CartDropdown);
